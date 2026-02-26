@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
         Em processadores x86/x64, o Visual Studio mapeará isso para um int de 32 bits, 
         pois a CPU processa 32 bits mais rápido do que fatia a memória para ler 16 bits.
     */
-    for (; i < 5000; i++) { // 255 porque é o tamanho máximo positivo de um byte sem sinal negativo (unsigned)
+    for (; i < UINT16_MAX; i++) { // UINT16_MAX = 0xffffui16 = 65.535 porque é o tamanho máximo positivo de um byte sem sinal negativo (unsigned)
         printf("Iteracao rapida: %d\n", (int)i);
     }
     printf("Tamanho escolhido para velocidade: %zu bytes\n\n", sizeof(i));
